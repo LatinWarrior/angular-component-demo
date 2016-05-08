@@ -9,10 +9,7 @@
     /* @ngInject */
     function DashboardController($q, dataservice, logger) {
         var vm = this;
-        vm.news = {
-            title: 'Components in Angular 1.5',
-            description: 'Angular 1.5 Rocks.'
-        };
+        
         vm.messageCount = 0;
         //vm.people = [];
         vm.title = 'Barcelona';

@@ -6,8 +6,6 @@
         .module('app.components.people')
         .directive('people', peopleDirective);
 
-
-
     function peopleDirective() {
         return {
             restrict: 'E',
