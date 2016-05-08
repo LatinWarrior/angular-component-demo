@@ -5,35 +5,41 @@
         .module('app.features.dashboard')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['$q', 'dataservice', 'logger'];
+    DashboardController.$inject = ['$q', 'messageCount', 'people', 'news', 'logger'];
     /* @ngInject */
-    function DashboardController($q, dataservice, logger) {
+    function DashboardController($q, messageCount, people, news, logger) {
+
         var vm = this;
         
-        vm.messageCount = 0;
+        vm.messageCount = messageCount;
         //vm.people = [];
         vm.title = 'Barcelona';
         vm.date = new Date();
+        vm.people = people;
+        vm.news = news;
+        vm.title = 'Dashboard';
+        vm.activate = activate;
 
         activate();
 
         function activate() {
-            var promises = [getMessageCount()];
-            return $q.all(promises).then(function() {
-                logger.info('Activated Dashboard View');
-            });
+            logger.info('Activated Dashboard View');
+            // var promises = [getMessageCount()];
+            // return $q.all(promises).then(function() {
+            //     logger.info('Activated Dashboard View');
+            // });
         }
 
-        function getDate() {
-            return vm.date;
-        }
+        // function getDate() {
+        //     return vm.date;
+        // }
 
-        function getMessageCount() {
-            return dataservice.getMessageCount().then(function(data) {
-                vm.messageCount = data;
-                return vm.messageCount;
-            });
-        }
+        // function getMessageCount() {
+        //     return dataservice.getMessageCount().then(function(data) {
+        //         vm.messageCount = data;
+        //         return vm.messageCount;
+        //     });
+        // }
 
         
     }

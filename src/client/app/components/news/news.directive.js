@@ -10,7 +10,9 @@
         return {
             restrict: 'E',
             templateUrl: 'app/components/news/news.html',
-            scope: {},
+            scope: {
+                news: '='
+            },
             controller: NewsController,
             controllerAs: 'vm',
             bindToController: true
@@ -23,10 +25,7 @@
 
         var vm = this;        
 
-        vm.news = {
-            title: 'Components in Angular 1.5',
-            description: 'Angular 1.5 Rocks.'
-        };           
+                   
     }
 
 })();

@@ -10,7 +10,9 @@
         return {
             restrict: 'E',
             templateUrl: 'app/components/people/people.html',
-            scope: {},
+            scope: {
+                people: '='
+            },
             controller: PeopleController,
             controllerAs: 'vm',
             bindToController: true
@@ -23,16 +25,16 @@
 
         var vm = this;
 
-        vm.people = [];
-        vm.getPeople = getPeople;        
+        //vm.people = [];
+        //vm.getPeople = getPeople;        
 
-        function getPeople() {
-            dataservice
-                .getPeople()
-                .then(function(data) {
-                    vm.people = data;
-                });
-        }
+        // function getPeople() {
+        //     dataservice
+        //         .getPeople()
+        //         .then(function(data) {
+        //             vm.people = data;
+        //         });
+        // }
     }
 
 })();

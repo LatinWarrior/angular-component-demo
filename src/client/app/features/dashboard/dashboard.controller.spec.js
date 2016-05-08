@@ -1,15 +1,13 @@
 /* jshint -W117, -W030 */
 describe('DashboardController', function() {
-    var controller;
-    var people = mockData.getMockPeople();
+    var controller;    
 
     beforeEach(function() {
-        bard.appModule('app.features.dashboard');
-        bard.inject('$controller', '$log', '$q', '$rootScope', 'dataservice');
+        bard.appModule('app.features.dashboard', 'app.resolves');
+        bard.inject('$controller', '$log', '$rootScope');
     });
 
-    beforeEach(function () {
-        sinon.stub(dataservice, 'getPeople').returns($q.when(people));
+    beforeEach(function () {        
         controller = $controller('DashboardController');
         $rootScope.$apply();
     });
@@ -27,6 +25,7 @@ describe('DashboardController', function() {
             });
 
             it('should have logged "Activated"', function() {
+                controller.activate();
                 expect($log.info.logs).to.match(/Activated/);
             });
 
