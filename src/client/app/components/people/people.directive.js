@@ -19,11 +19,17 @@
         };
     }
 
-    PeopleController.$inject = ['dataservice'];
+    PeopleController.$inject = ['logger'];
 
-    function PeopleController(dataservice) {
+    function PeopleController(logger) {
 
         var vm = this;
+
+        vm.clickPerson = clickPerson;
+
+        function clickPerson(person){
+            logger.info(JSON.stringify(person));
+        }
 
         //vm.people = [];
         //vm.getPeople = getPeople;        
