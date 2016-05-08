@@ -10,10 +10,14 @@
         return {
             restrict: 'E',
             templateUrl: 'app/components/container/container.html',
-            scope: {},
+            scope: {
+                title: '@',
+                color: '@'
+            },
             controller: ContainerController,
             controllerAs: 'vm',
-            bindToController: true
+            bindToController: true,
+            transclude: true
         };
     }
 
@@ -23,10 +27,7 @@
 
         var vm = this;        
 
-        vm.news = {
-            title: 'Components in Angular 1.5',
-            description: 'Angular 1.5 Rocks.'
-        };           
+        vm.wColor = 'w' + vm.color;            
     }
 
 })();

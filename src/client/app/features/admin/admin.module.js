@@ -3,7 +3,8 @@
 
     angular.module('app.features.admin', [
         'app.core',
-        'app.widgets'
+        'app.widgets',
+        'app.components.container'
       ]);
 
 })();
