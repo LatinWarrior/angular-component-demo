@@ -5,7 +5,8 @@
     angular.module('app.components', [
         'app.components.people',
         'app.components.news',
-        'app.components.container'
+        'app.components.container',
+        'app.components.users'
     ]);
 
 }());

@@ -1,0 +1,14 @@
+<table class="table table-condensed table-striped" ng-init="vm.getUsers()">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>                                            
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="u in vm.users">
+            <td>{{u.firstName}}</td>
+            <td>{{u.lastName}}</td>            
+        </tr>
+    </tbody>
+</table>

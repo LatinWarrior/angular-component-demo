@@ -4,7 +4,8 @@
 
     angular.module('app.features', [
         'app.features.admin',
-        'app.features.dashboard'
+        'app.features.dashboard',
+        'app.features.customers'
     ]);
 
 }());
