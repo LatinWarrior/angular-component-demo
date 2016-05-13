@@ -1,8 +1,5 @@
-(function() {
 
-    'use strict';
-
-    describe('Directive: people', function() {
+describe('Directive: people', function() {
         var element,
             vm;
 
@@ -60,5 +57,3 @@
             });
         });
     });
-
-}());

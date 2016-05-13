@@ -7,7 +7,9 @@ module.exports = function() {
     var specRunnerFile = 'specs.html';
     var temp = './.tmp/';
     var wiredep = require('wiredep');
-    var bowerFiles = wiredep({devDependencies: true})['js'];
+    var bowerFiles = wiredep({
+        devDependencies: true
+    })['js'];
     var bower = {
         json: require('./bower.json'),
         directory: './bower_components/',
@@ -65,7 +67,9 @@ module.exports = function() {
         /**
          * plato
          */
-        plato: {js: clientApp + '**/*.js'},
+        plato: {
+            js: clientApp + '**/*.js'
+        },
 
         /**
          * browser sync
@@ -109,10 +113,11 @@ module.exports = function() {
          *  5 specs
          *  6 templates
          */
-        testlibraries: [
+        testlibraries: [            
             nodeModules + '/mocha/mocha.js',
             nodeModules + '/chai/chai.js',
             nodeModules + '/sinon-chai/lib/sinon-chai.js'
+            
         ],
         specHelpers: [client + 'test-helpers/*.js'],
         specs: [clientApp + '**/*.spec.js'],
@@ -161,9 +166,15 @@ module.exports = function() {
                 dir: report + 'coverage',
                 reporters: [
                     // reporters not supporting the `file` property
-                    {type: 'html', subdir: 'report-html'},
-                    {type: 'lcov', subdir: 'report-lcov'},
-                    {type: 'text-summary'} //, subdir: '.', file: 'text-summary.txt'}
+                    {
+                        type: 'html',
+                        subdir: 'report-html'
+                    }, {
+                        type: 'lcov',
+                        subdir: 'report-lcov'
+                    }, {
+                        type: 'text-summary'
+                    } //, subdir: '.', file: 'text-summary.txt'}
                 ]
             },
             preprocessors: {}
